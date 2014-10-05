@@ -8,27 +8,27 @@
 
 import UIKit
 
-class TMViewController: UIViewController {
+class TMViewController: UIViewController,UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    var tableViewData = ["ActOne","ActTwo","ActThree"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Vista cargada")
+        println("View was load")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
+        return tableViewData.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")!
+        cell.textLabel?.text = tableViewData[indexPath.row]
+        cell.detailTextLabel?.text = String(indexPath.row)
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        return cell
     }
-    */
-
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("Cell " + String(indexPath.row) + " touched")
+    }
 }

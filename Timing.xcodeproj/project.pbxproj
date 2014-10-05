@@ -12,8 +12,8 @@
 		BCA730F019E190FB00E68DF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA730EF19E190FB00E68DF4 /* Images.xcassets */; };
 		BCA730F319E190FB00E68DF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA730F119E190FB00E68DF4 /* LaunchScreen.xib */; };
 		BCA730FF19E190FB00E68DF4 /* TimingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA730FE19E190FB00E68DF4 /* TimingTests.swift */; };
-		BCA7310A19E1925700E68DF4 /* TMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA7310819E1925700E68DF4 /* TMViewController.swift */; };
-		BCA7310B19E1925700E68DF4 /* TMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA7310919E1925700E68DF4 /* TMViewController.xib */; };
+		BCA7311219E19D2C00E68DF4 /* TMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA7311019E19D2C00E68DF4 /* TMViewController.swift */; };
+		BCA7311319E19D2C00E68DF4 /* TMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA7311119E19D2C00E68DF4 /* TMViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		BCA730F819E190FB00E68DF4 /* TimingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA730FD19E190FB00E68DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCA730FE19E190FB00E68DF4 /* TimingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingTests.swift; sourceTree = "<group>"; };
-		BCA7310819E1925700E68DF4 /* TMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMViewController.swift; sourceTree = "<group>"; };
-		BCA7310919E1925700E68DF4 /* TMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMViewController.xib; sourceTree = "<group>"; };
+		BCA7311019E19D2C00E68DF4 /* TMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMViewController.swift; sourceTree = "<group>"; };
+		BCA7311119E19D2C00E68DF4 /* TMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +125,8 @@
 		BCA7310D19E1926B00E68DF4 /* TMViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BCA7310819E1925700E68DF4 /* TMViewController.swift */,
-				BCA7310919E1925700E68DF4 /* TMViewController.xib */,
+				BCA7311019E19D2C00E68DF4 /* TMViewController.swift */,
+				BCA7311119E19D2C00E68DF4 /* TMViewController.xib */,
 			);
 			name = TMViewController;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA730F319E190FB00E68DF4 /* LaunchScreen.xib in Resources */,
-				BCA7310B19E1925700E68DF4 /* TMViewController.xib in Resources */,
+				BCA7311319E19D2C00E68DF4 /* TMViewController.xib in Resources */,
 				BCA730F019E190FB00E68DF4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA730EB19E190FB00E68DF4 /* AppDelegate.swift in Sources */,
-				BCA7310A19E1925700E68DF4 /* TMViewController.swift in Sources */,
+				BCA7311219E19D2C00E68DF4 /* TMViewController.swift in Sources */,
 				BCA730EE19E190FB00E68DF4 /* Timing.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

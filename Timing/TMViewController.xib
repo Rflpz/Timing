@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TMViewController" customModule="Timing" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="V4G-EZ-cOU" id="1gs-C5-y2b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,8 +14,26 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V4G-EZ-cOU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0ff-p5-9nl"/>
+                        <outlet property="delegate" destination="-1" id="HPc-DR-SyU"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="V4G-EZ-cOU" secondAttribute="bottom" id="EP9-2C-oMa"/>
+                <constraint firstAttribute="trailing" secondItem="V4G-EZ-cOU" secondAttribute="trailing" id="JTq-7u-4Ts"/>
+                <constraint firstItem="V4G-EZ-cOU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M46-l6-Ap8"/>
+                <constraint firstItem="V4G-EZ-cOU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="my9-AY-uT3"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="51.5" y="21.5"/>
         </view>
     </objects>
 </document>
