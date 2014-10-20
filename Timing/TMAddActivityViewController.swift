@@ -35,8 +35,6 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
         title = "New activity"
         
         self.navigationController?.navigationBar.topItem?.title = ""
-        
-        
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,6 +47,7 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
         var buttonRight = UIBarButtonItem(image: imgButton, style: .Plain, target: self, action:("saveActivity"))
         buttonRight.tintColor = .whiteColor()
         self.navigationItem.rightBarButtonItem = buttonRight
+        
     }
     func saveActivity(){
         println("Activity saved")
