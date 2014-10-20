@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC0EC7C619F4D5B50077B4C3 /* TMTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0EC7C419F4D5B50077B4C3 /* TMTimerViewController.swift */; };
 		BC0EC7C719F4D5B50077B4C3 /* TMTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0EC7C519F4D5B50077B4C3 /* TMTimerViewController.xib */; };
+		BC0EC7CA19F4DA4F0077B4C3 /* TMCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0EC7C819F4DA4F0077B4C3 /* TMCellTableViewCell.swift */; };
+		BC0EC7CB19F4DA4F0077B4C3 /* TMCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0EC7C919F4DA4F0077B4C3 /* TMCellTableViewCell.xib */; };
 		BC4F315919F47E33004E5B68 /* TMAddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F315719F47E33004E5B68 /* TMAddActivityViewController.swift */; };
 		BC4F315A19F47E33004E5B68 /* TMAddActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4F315819F47E33004E5B68 /* TMAddActivityViewController.xib */; };
 		BCA730EB19E190FB00E68DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA730EA19E190FB00E68DF4 /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		BC0EC7C419F4D5B50077B4C3 /* TMTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTimerViewController.swift; sourceTree = "<group>"; };
 		BC0EC7C519F4D5B50077B4C3 /* TMTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMTimerViewController.xib; sourceTree = "<group>"; };
+		BC0EC7C819F4DA4F0077B4C3 /* TMCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMCellTableViewCell.swift; sourceTree = "<group>"; };
+		BC0EC7C919F4DA4F0077B4C3 /* TMCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMCellTableViewCell.xib; sourceTree = "<group>"; };
 		BC4F315719F47E33004E5B68 /* TMAddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMAddActivityViewController.swift; sourceTree = "<group>"; };
 		BC4F315819F47E33004E5B68 /* TMAddActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMAddActivityViewController.xib; sourceTree = "<group>"; };
 		BCA730E519E190FB00E68DF4 /* Timing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,8 @@
 		BC0EC7C219F4D4650077B4C3 /* TMCellViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BC0EC7C819F4DA4F0077B4C3 /* TMCellTableViewCell.swift */,
+				BC0EC7C919F4DA4F0077B4C3 /* TMCellTableViewCell.xib */,
 			);
 			name = TMCellViewController;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 			files = (
 				BCA730F319E190FB00E68DF4 /* LaunchScreen.xib in Resources */,
 				BC0EC7C719F4D5B50077B4C3 /* TMTimerViewController.xib in Resources */,
+				BC0EC7CB19F4DA4F0077B4C3 /* TMCellTableViewCell.xib in Resources */,
 				BCA7311319E19D2C00E68DF4 /* TMViewController.xib in Resources */,
 				BC4F315A19F47E33004E5B68 /* TMAddActivityViewController.xib in Resources */,
 				BCA730F019E190FB00E68DF4 /* Images.xcassets in Resources */,
@@ -291,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0EC7CA19F4DA4F0077B4C3 /* TMCellTableViewCell.swift in Sources */,
 				BCBE7D9219F4C550003F59CD /* SideBar.swift in Sources */,
 				BC0EC7C619F4D5B50077B4C3 /* TMTimerViewController.swift in Sources */,
 				BCA730EB19E190FB00E68DF4 /* AppDelegate.swift in Sources */,

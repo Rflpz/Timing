@@ -11,7 +11,8 @@ import UIKit
 class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
 
     @IBOutlet var tableView: UITableView!
-    var tableViewData = ["ActOne","ActTwo","ActThree"]
+    var tableViewDataTitle = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
+    var tableViewDataDescription = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
     var sideBar:SideBar = SideBar()
     
     override func viewDidLoad() {
@@ -19,6 +20,12 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         println("Root view was load")
         sideBar = SideBar(sourceView: self.view, menuItems: ["Activities","Categories", "About"])
         sideBar.delegate = self
+        
+        var nib = UINib(nibName: "TMCellTableViewCell", bundle: nil)
+        
+        tableView.registerNib(nib!, forCellReuseIdentifier: "customCell")
+        
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,13 +34,17 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         customizeView()
     }
     func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
-        return 100
+        return tableViewDataTitle.count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")!
-        cell.textLabel?.text = String(indexPath.row);
-        cell.detailTextLabel?.text = String(indexPath.row)
+        var cell:TMCellTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("customCell") as TMCellTableViewCell
+        cell.lblName.text = tableViewDataTitle[indexPath.row]
+        cell.lblDescription.text = tableViewDataDescription[indexPath.row]
+        var imgCatCell = UIImage(named: "placeholder")
+        
+        cell.imgCategory.image = imgCatCell
+        
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell.backgroundColor = .clearColor()
         return cell
@@ -41,7 +52,7 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Celda tocada: " + String(indexPath.row))
         let timerViewController = TMTimerViewController(nibName: "TMTimerViewController", bundle: nil)
-        timerViewController.titleView = String(indexPath.row)
+        timerViewController.titleView = tableViewDataTitle[indexPath.row]
         self.navigationController?.pushViewController(timerViewController, animated: true)
     }
     
