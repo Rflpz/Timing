@@ -40,6 +40,9 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Celda tocada: " + String(indexPath.row))
+        let timerViewController = TMTimerViewController(nibName: "TMTimerViewController", bundle: nil)
+        timerViewController.titleView = String(indexPath.row)
+        self.navigationController?.pushViewController(timerViewController, animated: true)
     }
     
     func customItemsBar(){
