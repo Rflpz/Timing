@@ -16,6 +16,8 @@
 		BCA730FF19E190FB00E68DF4 /* TimingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA730FE19E190FB00E68DF4 /* TimingTests.swift */; };
 		BCA7311219E19D2C00E68DF4 /* TMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA7311019E19D2C00E68DF4 /* TMViewController.swift */; };
 		BCA7311319E19D2C00E68DF4 /* TMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA7311119E19D2C00E68DF4 /* TMViewController.xib */; };
+		BCBE7D9219F4C550003F59CD /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBE7D9019F4C550003F59CD /* SideBar.swift */; };
+		BCBE7D9319F4C550003F59CD /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBE7D9119F4C550003F59CD /* SideBarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		BCA730FE19E190FB00E68DF4 /* TimingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingTests.swift; sourceTree = "<group>"; };
 		BCA7311019E19D2C00E68DF4 /* TMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMViewController.swift; sourceTree = "<group>"; };
 		BCA7311119E19D2C00E68DF4 /* TMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMViewController.xib; sourceTree = "<group>"; };
+		BCBE7D9019F4C550003F59CD /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		BCBE7D9119F4C550003F59CD /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0EC7C119F4CCA60077B4C3 /* App delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BCA730EA19E190FB00E68DF4 /* AppDelegate.swift */,
+			);
+			name = "App delegate";
+			sourceTree = "<group>";
+		};
 		BC4F315619F47DDE004E5B68 /* TMAddViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA7310C19E1925F00E68DF4 /* ViewControllers */,
-				BCA730EA19E190FB00E68DF4 /* AppDelegate.swift */,
+				BC0EC7C119F4CCA60077B4C3 /* App delegate */,
 				BCA730EF19E190FB00E68DF4 /* Images.xcassets */,
 				BCA730F119E190FB00E68DF4 /* LaunchScreen.xib */,
 				BCA730EC19E190FB00E68DF4 /* Timing.xcdatamodeld */,
@@ -130,6 +142,7 @@
 		BCA7310C19E1925F00E68DF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCBE7D8F19F4C536003F59CD /* SideBarMenu */,
 				BC4F315619F47DDE004E5B68 /* TMAddViewController */,
 				BCA7310D19E1926B00E68DF4 /* TMViewController */,
 			);
@@ -143,6 +156,15 @@
 				BCA7311119E19D2C00E68DF4 /* TMViewController.xib */,
 			);
 			name = TMViewController;
+			sourceTree = "<group>";
+		};
+		BCBE7D8F19F4C536003F59CD /* SideBarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BCBE7D9019F4C550003F59CD /* SideBar.swift */,
+				BCBE7D9119F4C550003F59CD /* SideBarTableViewController.swift */,
+			);
+			name = SideBarMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBE7D9219F4C550003F59CD /* SideBar.swift in Sources */,
 				BCA730EB19E190FB00E68DF4 /* AppDelegate.swift in Sources */,
 				BCA7311219E19D2C00E68DF4 /* TMViewController.swift in Sources */,
 				BC4F315919F47E33004E5B68 /* TMAddActivityViewController.swift in Sources */,
+				BCBE7D9319F4C550003F59CD /* SideBarTableViewController.swift in Sources */,
 				BCA730EE19E190FB00E68DF4 /* Timing.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

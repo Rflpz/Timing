@@ -8,14 +8,17 @@
 
 import UIKit
 
-class TMViewController: UIViewController,UITableViewDelegate {
+class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
 
     @IBOutlet var tableView: UITableView!
     var tableViewData = ["ActOne","ActTwo","ActThree"]
+    var sideBar:SideBar = SideBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("Root view was load")
+        sideBar = SideBar(sourceView: self.view, menuItems: ["Activities","Categories", "About"])
+        sideBar.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +35,7 @@ class TMViewController: UIViewController,UITableViewDelegate {
         cell.textLabel?.text = String(indexPath.row);
         cell.detailTextLabel?.text = String(indexPath.row)
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.backgroundColor = .clearColor()
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -57,6 +61,24 @@ class TMViewController: UIViewController,UITableViewDelegate {
         self.navigationController?.navigationBar.barTintColor = .orangeColor()
         self.navigationController?.navigationBar.tintColor = .whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.tableView.backgroundColor = .clearColor()
        
+    }
+    
+    func sideBarDidSelectButtonAtIndex(index: Int) {
+        switch(index){
+        case 0:
+            view.backgroundColor =  .orangeColor()
+            break
+        case 1:
+            view.backgroundColor =  .redColor()
+            break
+        case 2:
+            view.backgroundColor =  .blueColor()
+            break
+        default:
+            break
+        }
+        println("Opcion " + String(index))
     }
 }
