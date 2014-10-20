@@ -2,8 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "scale" : "1x",
-      "filename" : "addButton.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "iphone",
@@ -11,7 +10,8 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "saveButton.png"
     }
   ],
   "info" : {
