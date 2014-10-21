@@ -11,9 +11,11 @@ import UIKit
 class TMTimerViewController: UIViewController {
     
     var titleView:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleView
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
 
 }

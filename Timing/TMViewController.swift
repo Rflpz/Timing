@@ -12,15 +12,9 @@ import CoreData
 class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
 
     @IBOutlet var tableView: UITableView!
-    
-    var tableViewDataTitle = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
-    var tableViewDataDescription = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
-    
+
     var listData : Array<AnyObject> = []
-    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-    
-    
     var sideBar:SideBar = SideBar()
     
     override func viewDidLoad() {
@@ -39,6 +33,7 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         customizeView()
         fillTableView()
     }
+    
     //MARK: Customize navigationBarItems
     func customItemsBar(){
         UIBarButtonItemStyle.Plain
@@ -47,6 +42,7 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         buttonRight.tintColor = .whiteColor()
         self.navigationItem.rightBarButtonItem = buttonRight
     }
+    
     func customizeView(){
         self.navigationController?.navigationBar.barTintColor = .orangeColor()
         self.navigationController?.navigationBar.tintColor = .whiteColor()
@@ -54,6 +50,7 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         self.tableView.backgroundColor = .clearColor()
         
     }
+    
     //MARK: Root to addActivityViewController
     func addActivity(){
         let addActivityViewController = TMAddActivityViewController(nibName: "TMAddActivityViewController", bundle: nil)
@@ -70,8 +67,6 @@ extension TMViewController{
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:TMCellTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("customCell") as TMCellTableViewCell
-//        cell.lblName.text = tableViewDataTitle[indexPath.row]
-//        cell.lblDescription.text = tableViewDataDescription[indexPath.row]
         if let ip = indexPath{
             var data: NSManagedObject = listData[ip.row] as NSManagedObject
             cell.lblName.text = data.valueForKey("name") as String?
@@ -85,9 +80,10 @@ extension TMViewController{
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("Celda tocada: " + String(indexPath.row))
+        println("Touched cell: " + String(indexPath.row))
         let timerViewController = TMTimerViewController(nibName: "TMTimerViewController", bundle: nil)
-        timerViewController.titleView = tableViewDataTitle[indexPath.row]
+        var data: NSManagedObject = listData[indexPath.row] as NSManagedObject
+        timerViewController.titleView = data.valueForKey("name") as String?
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(timerViewController, animated: true)
     }

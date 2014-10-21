@@ -19,39 +19,32 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         println("addActivity view was load")
-        
         txtDescription.delegate = self
         txtName.delegate = self
-        
         customizeView()
-        
-        
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        customItemsBar()
+    }
+    
+    //MARK: Functionality for textFileds (Hide keyboard)
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-    func customizeView(){
-        title = "New activity"
-        
-        self.navigationController?.navigationBar.topItem?.title = ""
-    }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-            customItemsBar()
-    }
-    func customItemsBar(){
-        UIBarButtonItemStyle.Plain
-        
-        var imgButton = UIImage(named: "saveButton")
-        var buttonRight = UIBarButtonItem(image: imgButton, style: .Plain, target: self, action:("saveActivity"))
-        buttonRight.tintColor = .whiteColor()
-        self.navigationItem.rightBarButtonItem = buttonRight
-        
-    }
+    
+
+
+}
+//MARK: - Save activity
+extension TMAddActivityViewController{
+    
     func saveActivity(){
         let entityDescripition = NSEntityDescription.entityForName("Activity", inManagedObjectContext: managedObjectContext!)
         let task = Activity(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext)
@@ -60,5 +53,22 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
         task.category = "Test"
         managedObjectContext?.save(nil)
         println("Activity saved")
+    }
+}
+//MARK: - Customize navigatioController
+extension TMAddActivityViewController{
+    func customizeView(){
+        title = "New activity"
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    
+    func customItemsBar(){
+        UIBarButtonItemStyle.Plain
+        
+        var imgButton = UIImage(named: "saveButton")
+        var buttonRight = UIBarButtonItem(image: imgButton, style: .Plain, target: self, action:("saveActivity"))
+        buttonRight.tintColor = .whiteColor()
+        self.navigationItem.rightBarButtonItem = buttonRight
     }
 }

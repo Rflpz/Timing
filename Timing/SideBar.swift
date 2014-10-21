@@ -47,12 +47,9 @@ class SideBar: NSObject, SideBarTableViewControllerDelegate {
         let hideGestureRecognizer:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipe:")
         hideGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
         originView.addGestureRecognizer(hideGestureRecognizer)
-        
     }
     
-    
     func setupSideBar(){
-        
         sideBarContainerView.frame = CGRectMake(-barWidth - 1, originView.frame.origin.y, barWidth, originView.frame.size.height)
         sideBarContainerView.backgroundColor = UIColor.clearColor()
         sideBarContainerView.clipsToBounds = false
@@ -75,9 +72,7 @@ class SideBar: NSObject, SideBarTableViewControllerDelegate {
         sideBarTableViewController.tableView.reloadData()
         
         sideBarContainerView.addSubview(sideBarTableViewController.tableView)
-    
     }
-    
     
     func handleSwipe(recognizer:UISwipeGestureRecognizer){
         if recognizer.direction == UISwipeGestureRecognizerDirection.Left{
@@ -88,9 +83,7 @@ class SideBar: NSObject, SideBarTableViewControllerDelegate {
             showSideBar(true)
             delegate?.sideBarWillOpen?()
         }
-    
     }
-    
     
     func showSideBar(shouldOpen:Bool){
         animator.removeAllBehaviors()
@@ -117,9 +110,7 @@ class SideBar: NSObject, SideBarTableViewControllerDelegate {
         let sideBarBehavior:UIDynamicItemBehavior = UIDynamicItemBehavior(items: [sideBarContainerView])!
         sideBarBehavior.elasticity = 0.3
         animator.addBehavior(sideBarBehavior)
-    
     }
-    
     
     func sideBarControlDidSelectRow(indexPath: NSIndexPath) {
         delegate?.sideBarDidSelectButtonAtIndex(indexPath.row)

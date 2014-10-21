@@ -132,12 +132,12 @@
 		BCA730E719E190FB00E68DF4 /* Timing */ = {
 			isa = PBXGroup;
 			children = (
+				BCD92D7719F636D80056FAB7 /* Models */,
 				BCA7310C19E1925F00E68DF4 /* ViewControllers */,
 				BC0EC7C119F4CCA60077B4C3 /* App delegate */,
 				BCA730EF19E190FB00E68DF4 /* Images.xcassets */,
 				BCA730F119E190FB00E68DF4 /* LaunchScreen.xib */,
 				BCA730EC19E190FB00E68DF4 /* Timing.xcdatamodeld */,
-				BCF8F7C719F6252400C469C6 /* Activity.swift */,
 				BCA730E819E190FB00E68DF4 /* Supporting Files */,
 			);
 			path = Timing;
@@ -171,9 +171,9 @@
 		BCA7310C19E1925F00E68DF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCBE7D8F19F4C536003F59CD /* SideBarMenu */,
 				BC0EC7C319F4D4E60077B4C3 /* TMTimerViewController */,
 				BC0EC7C219F4D4650077B4C3 /* TMCellViewController */,
-				BCBE7D8F19F4C536003F59CD /* SideBarMenu */,
 				BC4F315619F47DDE004E5B68 /* TMAddViewController */,
 				BCA7310D19E1926B00E68DF4 /* TMViewController */,
 			);
@@ -196,6 +196,22 @@
 				BCBE7D9119F4C550003F59CD /* SideBarTableViewController.swift */,
 			);
 			name = SideBarMenu;
+			sourceTree = "<group>";
+		};
+		BCD92D7719F636D80056FAB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCD92D7819F636E20056FAB7 /* TMActivityModel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BCD92D7819F636E20056FAB7 /* TMActivityModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCF8F7C719F6252400C469C6 /* Activity.swift */,
+			);
+			name = TMActivityModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
