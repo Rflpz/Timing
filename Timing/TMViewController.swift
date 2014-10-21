@@ -93,6 +93,20 @@ extension TMViewController{
         listData = managedObjectContext!.executeFetchRequest(fRequest, error: nil)!
         tableView.reloadData()
     }
+    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+        return true
+    }
+    func tableView(tableView: UITableView,commitEditingStyle editingStyle: UITableViewCellEditingStyle,forRowAtIndexPath indexPath: NSIndexPath){
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            managedObjectContext?.deleteObject(listData[indexPath.row] as NSManagedObject)
+            listData.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+        var error: NSError? = nil
+        if !(managedObjectContext?.save(&error) != nil){
+            abort()
+        }
+    }
 }
 //MARK: - Extension to sideBarMenu
 extension TMViewController{
