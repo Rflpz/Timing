@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
 
@@ -14,6 +15,12 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
     
     var tableViewDataTitle = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
     var tableViewDataDescription = ["Test of custom cell","Test of custom cell","Test of custom cell", "Test of custom cell"]
+    
+    var listData : Array<AnyObject> = []
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
+    
     var sideBar:SideBar = SideBar()
     
     override func viewDidLoad() {
@@ -30,6 +37,7 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
         title = "Activities"
         customItemsBar()
         customizeView()
+        fillTableView()
     }
     //MARK: Customize navigationBarItems
     func customItemsBar(){
@@ -57,13 +65,18 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
 extension TMViewController{
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
-        return tableViewDataTitle.count
+        return listData.count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:TMCellTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("customCell") as TMCellTableViewCell
-        cell.lblName.text = tableViewDataTitle[indexPath.row]
-        cell.lblDescription.text = tableViewDataDescription[indexPath.row]
+//        cell.lblName.text = tableViewDataTitle[indexPath.row]
+//        cell.lblDescription.text = tableViewDataDescription[indexPath.row]
+        if let ip = indexPath{
+            var data: NSManagedObject = listData[ip.row] as NSManagedObject
+            cell.lblName.text = data.valueForKey("name") as String?
+            cell.lblDescription.text = data.valueForKey("desc") as String?
+        }
         var imgCatCell = UIImage(named: "placeholder")
         cell.imgCategory.image = imgCatCell
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -77,6 +90,12 @@ extension TMViewController{
         timerViewController.titleView = tableViewDataTitle[indexPath.row]
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(timerViewController, animated: true)
+    }
+    
+    func fillTableView(){
+        let fRequest = NSFetchRequest(entityName: "Activity")
+        listData = managedObjectContext!.executeFetchRequest(fRequest, error: nil)!
+        tableView.reloadData()
     }
 }
 //MARK: - Extension to sideBarMenu

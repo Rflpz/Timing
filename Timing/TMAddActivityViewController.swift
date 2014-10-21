@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import CoreData
 class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var pckCategory: UIPickerView!
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("addActivity view was load")
@@ -50,6 +53,12 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate {
         
     }
     func saveActivity(){
+        let entityDescripition = NSEntityDescription.entityForName("Activity", inManagedObjectContext: managedObjectContext!)
+        let task = Activity(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext)
+        task.name = txtName.text
+        task.desc = txtDescription.text
+        task.category = "Test"
+        managedObjectContext?.save(nil)
         println("Activity saved")
     }
 }
