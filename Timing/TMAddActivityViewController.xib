@@ -25,6 +25,10 @@
                 </textField>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3O-Vl-56u">
                     <rect key="frame" x="8" y="246" width="359" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BeG-8g-45I"/>
+                        <outlet property="delegate" destination="-1" id="mqn-uv-Nhl"/>
+                    </connections>
                 </pickerView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description optional" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ke0-HC-e5e">
                     <rect key="frame" x="8" y="175" width="359" height="30"/>

@@ -16,8 +16,9 @@ class TMCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        imgCategory.layer.cornerRadius = imgCategory.frame.size.width / 2;
+        imgCategory.clipsToBounds = true;
     }
-
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

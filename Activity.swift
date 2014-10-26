@@ -11,8 +11,11 @@ import CoreData
 @objc(Activity)
 class Activity: NSManagedObject {
 
-    @NSManaged var name: String
-    @NSManaged var desc: String
     @NSManaged var category: String
+    @NSManaged var desc: String
+    @NSManaged var name: String
+    @NSManaged var lastUpdate: String
+    @NSManaged var time: String
+    @NSManaged var dateCreated: String
 
 }
