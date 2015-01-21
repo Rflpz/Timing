@@ -39,7 +39,7 @@
                         <constraint firstAttribute="height" constant="136" id="nPp-B4-6jL"/>
                     </constraints>
                     <attributedString key="attributedText">
-                        <fragment content="Timing is an application to some capabilities what you can do with CoreData &amp; Swift">
+                        <fragment content="Timing is an application to  show some capabilities that you can do with CoreData &amp; Swift">
                             <attributes>
                                 <font key="NSFont" size="18" name="Avenir-Medium"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>

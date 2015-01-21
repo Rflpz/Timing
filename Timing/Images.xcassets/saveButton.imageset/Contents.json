@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "saveButton.png"
     },
     {
       "idiom" : "iphone",
-      "scale" : "3x",
-      "filename" : "saveButton.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

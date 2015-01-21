@@ -50,16 +50,33 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate, UIPick
 extension TMAddActivityViewController{
     
     func saveActivity(){
-        let entityDescripition = NSEntityDescription.entityForName("Activity", inManagedObjectContext: managedObjectContext!)
-        let task = Activity(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext)
-        task.name = txtName.text
-        task.desc = txtDescription.text
-        var  selectionPicker = [self .pickerView(self.pckCategory, titleForRow: selectedRow, forComponent: 0)]
-        task.category = selectionPicker[0]
-        println(task.category)
-        managedObjectContext?.save(nil)
-        println("Activity saved")
-        navigationController?.popToRootViewControllerAnimated(true)
+        if(validateTextfields()){
+            let entityDescripition = NSEntityDescription.entityForName("Activity", inManagedObjectContext: managedObjectContext!)
+            let task = Activity(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext)
+                task.name = txtName.text
+                task.desc = txtDescription.text
+            var  selectionPicker = [self .pickerView(self.pckCategory, titleForRow: selectedRow, forComponent: 0)]
+                task.category = selectionPicker[0]
+            println(task.category)
+            managedObjectContext?.save(nil)
+            println("Activity saved")
+            navigationController?.popToRootViewControllerAnimated(true)
+        }
+        else{
+            var alert = UIAlertController(title: "Error", message: "All fields must be filled out.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+    }
+    func validateTextfields() -> Bool{
+        if(!txtDescription.text.isEmpty){
+            return true
+        }
+        if(!txtName.text.isEmpty){
+            return true
+        }
+        return false
     }
 }
 //MARK: - Customize navigatioController
@@ -82,7 +99,7 @@ extension TMAddActivityViewController{
 extension TMAddActivityViewController{
     func conectDataPicker(){
         // Initialize data pckCategory
-        dataPicker = ["One","Two","Three","Four"]
+        dataPicker = ["Excercise","Work","Study","Other"]
         self.pckCategory.delegate = self;
         selectedRow = 0
     }
