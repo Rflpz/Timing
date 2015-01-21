@@ -20,10 +20,10 @@ class TMViewController: UIViewController,UITableViewDelegate,SideBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         println("Root view was load")
-        sideBar = SideBar(sourceView: self.view, menuItems: ["Activities","Categories", "About"])
+        sideBar = SideBar(sourceView: self.view, menuItems: ["About"])
         sideBar.delegate = self
         var nib = UINib(nibName: "TMCellTableViewCell", bundle: nil)
-        tableView.registerNib(nib!, forCellReuseIdentifier: "customCell")
+        tableView.registerNib(nib, forCellReuseIdentifier: "customCell")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -114,13 +114,9 @@ extension TMViewController{
     func sideBarDidSelectButtonAtIndex(index: Int) {
         switch(index){
         case 0:
-            view.backgroundColor =  .orangeColor()
-            break
-        case 1:
-            view.backgroundColor =  .redColor()
-            break
-        case 2:
-            view.backgroundColor =  .blueColor()
+            var aboutController = TMAboutController(nibName: "TMAboutController", bundle: nil)
+            presentViewController(aboutController, animated: true, completion: nil)
+            sideBar.showSideBar(false)
             break
         default:
             break

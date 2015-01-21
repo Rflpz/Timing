@@ -42,6 +42,9 @@ class TMAddActivityViewController: UIViewController, UITextFieldDelegate, UIPick
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        println(textField.text)
+    }
 }
 //MARK: - Save activity
 extension TMAddActivityViewController{
@@ -56,6 +59,7 @@ extension TMAddActivityViewController{
         println(task.category)
         managedObjectContext?.save(nil)
         println("Activity saved")
+        navigationController?.popToRootViewControllerAnimated(true)
     }
 }
 //MARK: - Customize navigatioController
